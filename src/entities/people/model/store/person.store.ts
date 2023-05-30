@@ -27,8 +27,7 @@ class PersonStore implements IPersonStore {
 	async updatePerson(body: PersonUpdateRequestDTO): Promise<void> {
 		try {
 			this.isFetching = true;
-			const data = await this.peopleService.updatePerson(body);
-			this.data = data;
+			await this.peopleService.updatePerson(body);
 		} finally {
 			this.isFetching = false;
 		}
