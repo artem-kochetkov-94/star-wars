@@ -82,7 +82,7 @@ export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) =
 									</Button>
 								</Col>
 								<Col span={24}>
-									<Button type="primary" htmlType="submit" block size="large" onClick={goBack}>
+									<Button type="primary" block size="large" onClick={goBack}>
 										Back
 									</Button>
 								</Col>
