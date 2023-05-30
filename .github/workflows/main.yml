@@ -15,7 +15,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           registry: docker.pkg.github.com
-          name: docker.pkg.github.com/alaricode/star-wars/star-wars-app
+          name: docker.pkg.github.com/artem-kochetkov-94/star-wars/star-wars-app
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: "develop"
