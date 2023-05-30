@@ -9,7 +9,8 @@ export const FormItem: React.FC<FormItemProps> = ({
   return (
     <div>
       <Styled.Label>{label}</Styled.Label>
-      <div>{children}</div>
+      <div>{children}
+      </div>
       {error && <Styled.Error>{error}</Styled.Error>}
     </div>
   );
