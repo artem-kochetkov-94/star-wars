@@ -9,36 +9,15 @@ export const RouterConfig = () => {
 		},
 		{
 			path: 'people',
-			element: (
-				<>
-					{/* <Helmet>
-              <title>People</title>
-            </Helmet> */}
-					<MainPage />
-				</>
-			),
+			element: <MainPage />,
 		},
 		{
 			path: 'person/:id',
-			element: (
-				<>
-					{/* <Helmet>
-            <title>Person</title>
-          </Helmet> */}
-					<PersonPage />
-				</>
-			),
+			element: <PersonPage />,
 		},
 		{
 			path: 'person/:id/edit',
-			element: (
-				<>
-					{/* <Helmet>
-            <title>Person</title>
-          </Helmet> */}
-					<PersonPageEdit />
-				</>
-			),
+			element: <PersonPageEdit />,
 		},
 	]);
 
