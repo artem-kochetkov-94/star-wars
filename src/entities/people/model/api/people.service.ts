@@ -1,5 +1,5 @@
 import { PeopleResponseDTO } from '../dto';
-import { INetworkService, NetworkService } from 'shared/services';
+import { INetworkService, NetworkService } from 'src/shared/services';
 import { IPeopleService } from './people.service.interface';
 import { PersonResponseDTO } from '../dto/person.response.dto';
 

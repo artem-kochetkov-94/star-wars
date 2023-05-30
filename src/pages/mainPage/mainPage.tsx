@@ -1,5 +1,5 @@
-import { People } from "widgets";
+import { People } from 'src/widgets';
 
 export const MainPage = () => {
-  return <People />;
+	return <People />;
 };

@@ -1,5 +1,5 @@
-import { PeopleResponseDTO } from "entities/people";
+import { PeopleResponseDTO } from 'src/entities/people';
 
 export interface PersonListProps {
-  data: PeopleResponseDTO["results"];
+	data: PeopleResponseDTO['results'];
 }

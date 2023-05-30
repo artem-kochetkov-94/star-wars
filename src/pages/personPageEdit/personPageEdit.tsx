@@ -1,12 +1,12 @@
-import { useParams } from "react-router-dom";
-import { PersonEditForm } from "features";
+import { useParams } from 'react-router-dom';
+import { PersonEditForm } from 'src/features';
 
 type RouteParams = {
-  id: string;
+	id: string;
 };
 
 export const PersonPageEdit = () => {
-  const { id } = useParams<keyof RouteParams>() as RouteParams;
+	const { id } = useParams<keyof RouteParams>() as RouteParams;
 
-  return <PersonEditForm id={id} />;
+	return <PersonEditForm id={id} />;
 };
