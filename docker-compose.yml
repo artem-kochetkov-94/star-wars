@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: star-wars-app
+    image: ghcr.io/artem-kochetkov-94/star-wars/star-wars-app:develop
     container_name: star-wars-app
     restart: always
     ports:
