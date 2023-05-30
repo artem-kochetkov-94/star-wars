@@ -10,11 +10,11 @@ export const PersonEditable: React.FC<PersonEditableProps> = observer(({ id }) =
 	const { goBack } = useGoBack();
 
 	if (personStore.isFetching) {
-		return <p>fetching...</p>;
+		return <p className="center">fetching...</p>;
 	}
 
 	if (!personStore.data) {
-		return <p>not data</p>;
+		return <p className="center">not data</p>;
 	}
 
 	return (
