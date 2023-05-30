@@ -10,12 +10,10 @@ import { getFormikError } from 'src/shared/lib/getFormikError';
 import { Styled } from './styles';
 import { Input } from 'src/shared/ui/input';
 import { useGoBack } from 'src/shared/hooks/useGoBack';
-import { useEffect } from 'react';
+import { useGetPerson } from 'src/entities/people/lib/hooks/useGetPerson';
 
 export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) => {
-	useEffect(() => {
-		personStore.getPersonById(id);
-	}, [id]);
+	useGetPerson(id);
 
 	const { goBack } = useGoBack();
 	const { isFetching, data, updatePerson } = personStore;
