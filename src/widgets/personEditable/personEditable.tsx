@@ -31,7 +31,7 @@ export const PersonEditable: React.FC<PersonEditableProps> = observer(({ id }) =
 					</Col>
 					<Col span={24}>
 						<Button type="primary" block onClick={goBack} size="large">
-							Edit
+							Back
 						</Button>
 					</Col>
 				</Row>
