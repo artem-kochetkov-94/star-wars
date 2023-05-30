@@ -1,5 +1,5 @@
-import { FormFieldNames } from '../types';
-import { schema } from '../schema';
+import { FormFieldNames } from '../types/formFieldNames';
+import { schema } from '../model/schema';
 import { FormikError } from 'src/shared/types/formik.error.interface';
 import { NoErrorThrownError, getError } from 'src/shared/lib/getError';
 

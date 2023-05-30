@@ -2,8 +2,8 @@ import { personStore, useGetPerson, useUpdatePerson } from 'src/entities/people'
 import { PersonEditFormProps } from './personEditForm.props';
 import { observer } from 'mobx-react-lite';
 import { Form, Formik } from 'formik';
-import { schema } from './schema';
-import { FormFieldNames } from './types';
+import { schema } from '../model/schema';
+import { FormFieldNames } from '../types/formFieldNames';
 import { Button, Col, Row } from 'antd';
 import { FormItem } from 'src/shared/ui';
 import { getFormikError } from 'src/shared/lib/getFormikError';

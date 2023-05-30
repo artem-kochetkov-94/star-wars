@@ -1,4 +1,4 @@
 export interface FormikError {
-  type: string;
-  name: string;
+	type: string;
+	name: string;
 }

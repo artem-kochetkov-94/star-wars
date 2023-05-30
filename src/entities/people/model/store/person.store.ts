@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { IPersonStore } from './person.store.interface';
 import { IPeopleService } from '../api/people.service.interface';
 import { PeopleService } from '../api/people.service';
-import { PersonResponseDTO } from '../dto/person.response.dto';
+import { PersonResponseDTO } from '../dto/personResponseDTO';
 import { PersonUpdateRequestDTO } from '../dto';
 
 class PersonStore implements IPersonStore {

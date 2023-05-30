@@ -1,3 +1,3 @@
 export interface PersonEditFormProps {
-  id: string;
+	id: string;
 }
