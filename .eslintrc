@@ -16,6 +16,7 @@
 			}
 		]
 	},
+	"ignorePatterns": ["**/*.css","**/*.scss"],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",

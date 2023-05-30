@@ -8,5 +8,9 @@ type RouteParams = {
 export const PersonPage = () => {
 	const { id } = useParams<keyof RouteParams>() as RouteParams;
 
-	return <PersonEditable id={id} />;
+	return (
+		<div className="container">
+			<PersonEditable id={id} />
+		</div>
+	);
 };

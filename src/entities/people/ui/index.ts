@@ -1,2 +1,1 @@
-export * from "./personCard";
-export * from "./personList";
+export * from './personCard';

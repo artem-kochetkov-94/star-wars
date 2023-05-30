@@ -1,16 +1,18 @@
-import { Typography } from "antd";
-import { PersonProps } from "./personCard.props";
+import { Typography } from 'antd';
+import { PersonProps } from './personCard.props';
+import { Styled } from './styles';
 
 export const PersonCard: React.FC<PersonProps> = ({ data, controlsSlot }) => {
-  const { name, birth_year, height } = data;
+	const { name, birth_year, height } = data;
 
-  return (
-    <div>
-      <Typography.Paragraph>name: {name}</Typography.Paragraph>
-      <Typography.Paragraph>birth_year: {birth_year}</Typography.Paragraph>
-      <Typography.Paragraph>height {height}</Typography.Paragraph>
+	return (
+		<Styled.Wrapper>
+			<Typography.Paragraph>Name: {name}</Typography.Paragraph>
+			<Typography.Paragraph>Birth_year: {birth_year}</Typography.Paragraph>
+			<Typography.Paragraph>Height {height}</Typography.Paragraph>
+			<Typography.Paragraph>More props...</Typography.Paragraph>
 
-      {controlsSlot && controlsSlot}
-    </div>
-  );
+			{controlsSlot && controlsSlot}
+		</Styled.Wrapper>
+	);
 };

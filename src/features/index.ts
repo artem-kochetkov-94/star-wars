@@ -1,2 +1,2 @@
-export * from "./pagination";
-export * from "./personEditForm";
+export * from './personEditForm';
+export * from './personTable';

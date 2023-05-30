@@ -9,8 +9,13 @@ export const columns = [
 	},
 	{
 		title: 'Height',
-		dataIndex: 'height',
+		dataIndex: 'mass',
 		key: 'height',
+	},
+	{
+		title: 'Mass',
+		dataIndex: 'mass',
+		key: 'mass',
 	},
 	{
 		title: 'Birth Year',
@@ -18,11 +23,11 @@ export const columns = [
 		key: 'birth_year',
 	},
 	{
-		title: 'Link',
+		title: 'Detailed link',
 		dataIndex: 'url',
 		key: 'url',
-		render: (text: Person['url']): JSX.Element => {
-			return <Link to={`/person/${getUrlId(text)}`}>link</Link>;
+		render: (text: Person['url'], record: Person): JSX.Element => {
+			return <Link to={`/person/${getUrlId(text)}`}>{record.name}</Link>;
 		},
 	},
 ];

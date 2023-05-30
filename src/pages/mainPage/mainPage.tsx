@@ -1,5 +1,9 @@
 import { People } from 'src/widgets';
 
 export const MainPage = () => {
-	return <People />;
+	return (
+		<div className="contaier">
+			<People />
+		</div>
+	);
 };

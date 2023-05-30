@@ -1,1 +1,2 @@
-export * from "./formItem";
+export * from './formItem';
+export * from './pagination';

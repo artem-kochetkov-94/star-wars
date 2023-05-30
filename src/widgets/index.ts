@@ -1,2 +1,2 @@
-export * from "./people";
-export * from "./personEditable";
+export * from './people';
+export * from './personEditable';
