@@ -12,7 +12,7 @@ export const People = observer(() => {
 			{peopleStore.data?.results.length && (
 				<Row>
 					<Col span={24}>
-						<PersonTable data={peopleStore.data.results} />
+						<PersonTable data={peopleStore.data.results} isFetching={peopleStore.isFetching} />
 					</Col>
 
 					<Col span={24}>
