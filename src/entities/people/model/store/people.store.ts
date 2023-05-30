@@ -18,6 +18,7 @@ class PeopleStore implements IPeopleStore {
 			this.isFetching = true;
 			const data = await this.peopleService.getPeople(page);
 			this.data = data;
+		} catch (e) {
 		} finally {
 			this.isFetching = false;
 		}

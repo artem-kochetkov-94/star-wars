@@ -1,32 +1,32 @@
-import { personStore, useGetPerson, useUpdatePerson } from 'src/entities/people';
+import { personStore } from 'src/entities/people';
 import { PersonEditFormProps } from './personEditForm.props';
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 import { Form, Formik } from 'formik';
 import { schema } from '../model/schema';
 import { FormFieldNames } from '../types/formFieldNames';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row, Spin } from 'antd';
 import { FormItem } from 'src/shared/ui';
 import { getFormikError } from 'src/shared/lib/getFormikError';
 import { Styled } from './styles';
 import { Input } from 'src/shared/ui/input';
 import { useGoBack } from 'src/shared/hooks/useGoBack';
+import { useEffect } from 'react';
 
 export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) => {
-	useGetPerson(id);
-	const { updatePerson } = useUpdatePerson();
+	useEffect(() => {
+		personStore.getPersonById(id);
+	}, [id]);
+
 	const { goBack } = useGoBack();
+	const { isFetching, data, updatePerson } = personStore;
 
-	if (personStore.isFetching) {
-		return <p className="center">fetching...</p>;
-	}
-
-	if (!personStore.data) {
+	if (!data) {
 		return <p className="center">not data</p>;
 	}
 
 	return (
 		<Formik
-			initialValues={personStore.data}
+			initialValues={data}
 			validationSchema={schema}
 			enableReinitialize
 			onSubmit={(values) => {
@@ -39,6 +39,11 @@ export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) =
 			{({ touched, errors }) => {
 				return (
 					<Styled.Wrapper>
+						{isFetching && (
+							<Styled.Loader>
+								<Spin />
+							</Styled.Loader>
+						)}
 						<Form>
 							<Row gutter={[0, 20]}>
 								<Col span={24}>

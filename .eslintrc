@@ -14,7 +14,8 @@
 			{
 				"allowSingleExtends": true
 			}
-		]
+		],
+		"no-empty": "off"
 	},
 	"ignorePatterns": ["**/*.css","**/*.scss"],
 	"extends": [

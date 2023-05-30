@@ -22,6 +22,7 @@
     "jsx": "react-jsx",
     "useDefineForClassFields": true,
     "strictPropertyInitialization": false,
+    "experimentalDecorators": true
   },
   "include": [
     "src"

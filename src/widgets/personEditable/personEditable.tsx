@@ -1,25 +1,27 @@
-import { PersonCard, personStore, useGetPerson } from 'src/entities/people';
+import { PersonCard, personStore } from 'src/entities/people';
 import { PersonEditableProps } from './personEditable.props';
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import { Button, Col, Row } from 'antd';
 import { useGoBack } from 'src/shared/hooks/useGoBack';
+import { useGetPerson } from 'src/entities/people/lib/hooks/useGetPerson';
 
 export const PersonEditable: React.FC<PersonEditableProps> = observer(({ id }) => {
 	useGetPerson(id);
 	const { goBack } = useGoBack();
+	const { data, isFetching } = personStore;
 
-	if (personStore.isFetching) {
+	if (isFetching) {
 		return <p className="center">fetching...</p>;
 	}
 
-	if (!personStore.data) {
+	if (!data) {
 		return <p className="center">not data</p>;
 	}
 
 	return (
 		<PersonCard
-			data={personStore.data}
+			data={data}
 			controlsSlot={
 				<Row gutter={[0, 10]}>
 					<Col span={24}>

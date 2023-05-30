@@ -1,8 +1,6 @@
 export * from './ui';
 
 export * from './lib/hooks/useGetPeople';
-export * from './lib/hooks/useGetPerson';
-export * from './lib/hooks/useUpdatePerson';
 export * from './lib/helpers/getUrlId';
 
 export * from './model/api/people.service';

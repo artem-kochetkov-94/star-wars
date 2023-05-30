@@ -1,4 +1,5 @@
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react';
+
 import { PersonTable } from 'src/features';
 import { useGetPeople, peopleStore } from 'src/entities/people';
 import { Pagination } from 'src/shared/ui';
@@ -9,12 +10,15 @@ export const People = observer(() => {
 
 	return (
 		<>
-			{peopleStore.data?.results.length && (
-				<Row>
-					<Col span={24}>
-						<PersonTable data={peopleStore.data.results} isFetching={peopleStore.isFetching} />
-					</Col>
+			<Row>
+				<Col span={24}>
+					<PersonTable
+						data={peopleStore?.data?.results || []}
+						isFetching={peopleStore.isFetching}
+					/>
+				</Col>
 
+				{peopleStore.data?.results.length && (
 					<Col span={24}>
 						<Row justify="end">
 							<Col>
@@ -29,8 +33,8 @@ export const People = observer(() => {
 							</Col>
 						</Row>
 					</Col>
-				</Row>
-			)}
+				)}
+			</Row>
 		</>
 	);
 });
