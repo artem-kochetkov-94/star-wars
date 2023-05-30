@@ -18,6 +18,10 @@ export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) =
 	const { goBack } = useGoBack();
 	const { isFetching, data, updatePerson } = personStore;
 
+	if (!data && isFetching) {
+		return <p className="center">fetching...</p>;
+	}
+
 	if (!data) {
 		return <p className="center">not data</p>;
 	}

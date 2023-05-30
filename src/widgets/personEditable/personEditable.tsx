@@ -11,7 +11,7 @@ export const PersonEditable: React.FC<PersonEditableProps> = observer(({ id }) =
 	const { goBack } = useGoBack();
 	const { data, isFetching } = personStore;
 
-	if (isFetching) {
+	if (!data && isFetching) {
 		return <p className="center">fetching...</p>;
 	}
 
