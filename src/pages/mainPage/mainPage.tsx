@@ -2,7 +2,7 @@ import { People } from 'src/widgets';
 
 export const MainPage = () => {
 	return (
-		<div className="contaier">
+		<div className="container">
 			<People />
 		</div>
 	);
