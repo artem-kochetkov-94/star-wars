@@ -1,0 +1,22 @@
+name: eslint
+
+on
+  pull_request:
+    branches: [master]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install NVM
+        run: curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
+      - name: install Node.js
+        env:
+          NODE_VERSION: 16.18.0
+        run: nvm install $NODE_VERSION
+      - name: Install dependecies
+        run: npm install
+      - name: Lint source code with ESLint
+        run: npm run lint
+
