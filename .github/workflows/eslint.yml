@@ -1,6 +1,6 @@
 name: eslint
 
-on
+on:
   pull_request:
     branches: [master]
 
