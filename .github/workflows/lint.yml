@@ -17,7 +17,6 @@ jobs:
       - name: Lint source code with ESLint
         run: npx eslint .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx,.json
 
-jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
