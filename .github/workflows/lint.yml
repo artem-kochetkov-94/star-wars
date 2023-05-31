@@ -1,0 +1,16 @@
+name: lint
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  eslint:
+    runs-on: node:16.18.0-alpine
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependecies
+        run: npm install
+      - name: Lint source code with ESLint
+        run: npm run lint
+
