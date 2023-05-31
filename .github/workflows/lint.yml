@@ -12,13 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Cache node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         env:
           cache-name: npm-${{ hashFiles('package-lock.json') }}
         with:
           path: ~/.npm
           key: ${{ env.cache-name }}
-          restore-keys: |
+          restore-key: |
             ${{ env.cache-name }}
       - name: Install dependecies
         run: npm ci
@@ -32,13 +32,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Cache node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         env:
           cache-name: npm-${{ hashFiles('package-lock.json') }}
         with:
           path: ~/.npm
           key: ${{ env.cache-name }}
-          restore-keys: |
+          restore-key: |
             ${{ env.cache-name }}
       - name: Install dependecies
         run: npm ci
