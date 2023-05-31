@@ -15,5 +15,5 @@ jobs:
       - name: Install dependecies
         run: npm ci
       - name: Lint source code with ESLint
-        run: npm run lint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx,.json,.css,.scss,.md
 

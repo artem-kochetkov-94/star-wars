@@ -34,7 +34,6 @@
 		"test:ci": "CI=true react-scripts test",
 		"eject": "react-scripts eject",
 		"prepare": "husky install",
-		"lint": "lint-staged",
 		"pre-commit": "lint-staged"
 	},
 	"husky": {
@@ -68,6 +67,7 @@
 	},
 	"devDependencies": {
 		"@types/styled-components": "^5.1.26",
+		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"husky": "^8.0.3",
