@@ -42,7 +42,7 @@
 		}
 	},
 	"lint-staged": {
-		"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+		"src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
 			"prettier --write",
 			"eslint --quiet --cache --fix"
 		]
@@ -67,6 +67,7 @@
 	},
 	"devDependencies": {
 		"@types/styled-components": "^5.1.26",
+		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"husky": "^8.0.3",
