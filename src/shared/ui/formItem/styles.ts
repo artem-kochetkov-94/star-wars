@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Label = styled.div`
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 `;
 
 const Error = styled.div`
-  padding-top: 5px;
-  color: red;
+	padding-top: 5px;
+	color: red;
 `;
 
 export const Styled = {
-  Label,
-  Error,
+	Label,
+	Error,
 };

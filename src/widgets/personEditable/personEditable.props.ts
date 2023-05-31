@@ -1,3 +1,3 @@
 export interface PersonEditableProps {
-  id: string;
+	id: string;
 }

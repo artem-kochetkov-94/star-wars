@@ -1,1 +1,1 @@
-export * from "./personPage";
+export * from './personPage';

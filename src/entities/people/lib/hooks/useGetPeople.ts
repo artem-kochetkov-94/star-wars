@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { peopleStore } from "../../model/store/people.store";
+import { useEffect } from 'react';
+import { peopleStore } from '../../model/store/people.store';
 
 export const useGetPeople = () => {
-  useEffect(() => {
-    peopleStore.getPeople();
-  }, []);
+	useEffect(() => {
+		peopleStore.getPeople();
+	}, []);
 };
