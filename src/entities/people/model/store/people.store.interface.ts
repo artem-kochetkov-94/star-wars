@@ -1,3 +1,3 @@
 export interface IPeopleStore {
-  getPeople(page?: string): Promise<void>;
+	getPeople(page?: string): Promise<void>;
 }

@@ -1,3 +1,3 @@
 export interface IPersonStore {
-  getPersonById(id: string): Promise<void>;
+	getPersonById(id: string): Promise<void>;
 }

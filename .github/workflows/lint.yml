@@ -27,5 +27,5 @@ jobs:
       - name: Install dependecies
         run: npm ci
       - name: Lint source code with Prettier
-        run: npx prettier check:format src/ --ext .js,.jsx,.ts,.tsx,.json
+        run: npx prettier --check src/ --ext .js,.jsx,.ts,.tsx,.json
 

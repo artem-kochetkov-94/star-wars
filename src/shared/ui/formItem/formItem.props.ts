@@ -1,8 +1,8 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 export interface FormItemProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  label: string;
-  error?: string;
-  children: ReactNode;
+	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+	label: string;
+	error?: string;
+	children: ReactNode;
 }
