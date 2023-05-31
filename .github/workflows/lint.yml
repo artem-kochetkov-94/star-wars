@@ -17,3 +17,16 @@ jobs:
       - name: Lint source code with ESLint
         run: npx eslint .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx,.json
 
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependecies
+        run: npm ci
+      - name: Lint source code with Prettier
+        run: npx prettier check:format src/ --ext .js,.jsx,.ts,.tsx,.json
+
