@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Lint source code with ESLint
-        run: npx eslint .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx,.json
+        run: eslint .eslintrc.js src/ --ext .js,.jsx,.ts,.tsx,.json
 
   prettier:
     runs-on: ubuntu-latest
