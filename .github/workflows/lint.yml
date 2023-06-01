@@ -31,11 +31,8 @@ jobs:
         if: steps.cache-step.outputs.cache-hit != 'true'
         run: npm ci
 
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: src/
-      # - name: Lint source code with ESLint
-        # run: npx eslint ./src --ext .js,.jsx,.ts,.tsx,.json
+      - name: Lint source code with ESLint
+        run: eslint ./src --ext .js,.jsx,.ts,.tsx,.json
 
   prettier:
     runs-on: ubuntu-latest
