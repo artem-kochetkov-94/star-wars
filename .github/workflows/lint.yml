@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Lint source code with ESLint
-        run: npx eslint src/ --ext .js,.jsx,.ts,.tsx,.json
+        run: npx eslint ./src --ext .js,.jsx,.ts,.tsx,.json
 
   prettier:
     runs-on: ubuntu-latest
@@ -61,5 +61,5 @@ jobs:
         run: npm ci
 
       - name: Lint source code with Prettier
-        run: npx prettier --check src/ --ext .js,.jsx,.ts,.tsx,.json
+        run: npx prettier --check ./src --ext .js,.jsx,.ts,.tsx,.json
 
