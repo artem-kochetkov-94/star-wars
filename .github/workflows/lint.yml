@@ -63,3 +63,31 @@ jobs:
       - name: Lint source code with Prettier
         run: npx prettier --check ./src --ext .js,.jsx,.ts,.tsx,.json
 
+  test:ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Cache node.js modules
+        id: cache-step
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+
+      - name: Install dependencies
+        if: steps.cache-step.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Test:ci
+        run: npm run test:ci
