@@ -7,12 +7,13 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    container:
-      image: node:16.18.0-alpine
     steps:
       - uses: actions/checkout@v3
-      - name: lalala
-        run: apk add --no-cache tar
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Cache node.js modules
         id: cache-step
         uses: actions/cache@v3
