@@ -1,5 +1,5 @@
-import { FormFieldNames } from '../types/formFieldNames';
 import * as Yup from 'yup';
+import { FormFieldNames } from '../types/formFieldNames';
 
 const INVALID_NUMBER_ERROR = 'Must be a number';
 

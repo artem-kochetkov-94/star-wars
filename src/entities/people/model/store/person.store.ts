@@ -1,11 +1,11 @@
 import { makeAutoObservable } from 'mobx';
-import { IPersonStore } from './person.store.interface';
-import { IPeopleService } from '../api/people.service.interface';
-import { PeopleService } from '../api/people.service';
-import { PersonResponseDTO } from '../dto/personResponseDTO';
-import { PersonUpdateRequestDTO } from '../dto';
-import { INotificationService, NotificationService } from 'src/shared/services/notification';
 import { delay } from 'src/shared/lib/delay';
+import { INotificationService, NotificationService } from 'src/shared/services/notification';
+import { PeopleService } from '../api/people.service';
+import { IPeopleService } from '../api/people.service.interface';
+import { PersonUpdateRequestDTO } from '../dto';
+import { PersonResponseDTO } from '../dto/personResponseDTO';
+import { IPersonStore } from './person.store.interface';
 
 class PersonStore implements IPersonStore {
 	data: PersonResponseDTO | null = null;

@@ -13,6 +13,12 @@ module.exports = {
 			},
 		],
 		'no-empty': 'off',
+		// feature-sliced/import-order
+		'import/order': 'error', // ~ 1,
+		// feature-sliced/public-api
+		'import/no-internal-modules': 'error', // ~ 1,
+		// feature-sliced/layers-slices
+		'boundaries/element-types': 'error', // ~ 1,
 	},
 	ignorePatterns: ['**/*.css', '**/*.scss'],
 	extends: [
@@ -20,5 +26,8 @@ module.exports = {
 		'plugin:@typescript-eslint/eslint-recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react-hooks/recommended',
+		'@feature-sliced/eslint-config/rules/import-order',
+		'@feature-sliced/eslint-config/rules/public-api',
+		'@feature-sliced/eslint-config/rules/layers-slices',
 	],
 };

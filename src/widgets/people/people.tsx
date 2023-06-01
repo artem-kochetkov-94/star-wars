@@ -1,9 +1,8 @@
+import { Col, Row } from 'antd';
 import { observer } from 'mobx-react';
-
 import { PersonTable } from 'src/features';
 import { useGetPeople, peopleStore } from 'src/entities/people';
 import { Pagination } from 'src/shared/ui';
-import { Col, Row } from 'antd';
 
 export const People = observer(() => {
 	useGetPeople();

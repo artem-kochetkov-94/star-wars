@@ -1,7 +1,7 @@
-import { PeopleResponseDTO } from '../dto';
 import { INetworkService, NetworkService } from 'src/shared/services';
-import { IPeopleService } from './people.service.interface';
+import { PeopleResponseDTO } from '../dto';
 import { PersonResponseDTO } from '../dto/personResponseDTO';
+import { IPeopleService } from './people.service.interface';
 
 export class PeopleService implements IPeopleService {
 	private networkService: INetworkService = new NetworkService();

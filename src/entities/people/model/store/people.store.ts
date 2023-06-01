@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx';
+import { PeopleService } from '../api/people.service';
+import { IPeopleService } from '../api/people.service.interface';
 import { PeopleResponseDTO } from '../dto';
 import { IPeopleStore } from './people.store.interface';
-import { IPeopleService } from '../api/people.service.interface';
-import { PeopleService } from '../api/people.service';
 
 class PeopleStore implements IPeopleStore {
 	data: PeopleResponseDTO | null = null;

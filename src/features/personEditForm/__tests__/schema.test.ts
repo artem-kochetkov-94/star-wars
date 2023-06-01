@@ -1,7 +1,7 @@
-import { FormFieldNames } from '../types/formFieldNames';
-import { schema } from '../model/schema';
-import { FormikError } from 'src/shared/types/formikError';
 import { NoErrorThrownError, getError } from 'src/shared/lib/getError';
+import { FormikError } from 'src/shared/types/formikError';
+import { schema } from '../model/schema';
+import { FormFieldNames } from '../types/formFieldNames';
 
 describe(`schema.${[FormFieldNames.Name]} validation`, () => {
 	it(`requires should fail`, async () => {

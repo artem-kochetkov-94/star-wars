@@ -1,10 +1,10 @@
-import { PersonCard, personStore } from 'src/entities/people';
-import { PersonEditableProps } from './personEditable.props';
+import { Button, Col, Row } from 'antd';
 import { observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
-import { Button, Col, Row } from 'antd';
-import { useGoBack } from 'src/shared/hooks/useGoBack';
+import { PersonCard, personStore } from 'src/entities/people';
 import { useGetPerson } from 'src/entities/people/lib/hooks/useGetPerson';
+import { useGoBack } from 'src/shared/hooks/useGoBack';
+import { PersonEditableProps } from './personEditable.props';
 
 export const PersonEditable: React.FC<PersonEditableProps> = observer(({ id }) => {
 	useGetPerson(id);

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Field } from 'formik';
+import styled from 'styled-components';
 
 const Input = styled(Field)`
 	width: 100%;
