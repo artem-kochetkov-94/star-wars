@@ -11,7 +11,7 @@ jobs:
       image: node:16.18.0-alpine
     steps:
       - uses: actions/checkout@v3
-
+      run: apk add --no-cache tar
       - name: Cache node.js modules
         id: cache-step
         uses: actions/cache@v3
