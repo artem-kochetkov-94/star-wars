@@ -63,7 +63,7 @@ jobs:
       - name: Lint source code with Prettier
         run: npx prettier --check ./src --ext .js,.jsx,.ts,.tsx,.json
 
-  test:ci:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
