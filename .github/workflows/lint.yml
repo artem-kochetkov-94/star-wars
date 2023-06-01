@@ -12,15 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Cache node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         env:
-          cache-name: npm-${{ hashFiles('package-lock.json') }}
+          cache-name: cache-node-modules
         with:
-          path: |
-           .npm
-          key: ${{ env.cache-name }}
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-           ${{ env.cache-name }}
+            ${{ runner.os }}-build.${{ env.cache-name }}-
+            ${{ runner.os }}-build
+            ${{ runner.os }}-
       - name: Install dependencies
         run: npm ci
       - name: Lint source code with ESLint
@@ -32,16 +33,6 @@ jobs:
       image: node:16.18.0-alpine
     steps:
       - uses: actions/checkout@v3
-      - name: Cache node.js modules
-        uses: actions/cache@v3
-        env:
-          cache-name: npm-${{ hashFiles('package-lock.json') }}
-        with:
-          path: |
-           .npm
-          key: ${{ env.cache-name }}
-          restore-keys: |
-           ${{ env.cache-name }}
       - name: Install dependencies
         run: npm ci
       - name: Lint source code with Prettier
