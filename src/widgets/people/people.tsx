@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import { observer } from 'mobx-react';
-import { PersonTable } from 'src/features';
+import { PersonTable, SearchForm } from 'src/features';
 import { useGetPeople, peopleStore } from 'src/entities/people';
 import { Pagination } from 'src/shared/ui';
 
@@ -10,6 +10,14 @@ export const People = observer(() => {
 	return (
 		<>
 			<Row>
+				<Col span={24}>
+					<SearchForm
+						onChange={peopleStore.handleSearchChange}
+						value={peopleStore.search}
+						onSubmit={peopleStore.searchPeople}
+					/>
+				</Col>
+
 				<Col span={24}>
 					<PersonTable
 						data={peopleStore?.data?.results || []}
