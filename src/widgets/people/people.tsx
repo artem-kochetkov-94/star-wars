@@ -11,11 +11,7 @@ export const People = observer(() => {
 		<>
 			<Row>
 				<Col span={24}>
-					<SearchForm
-						onChange={peopleStore.handleSearchChange}
-						value={peopleStore.search}
-						onSubmit={peopleStore.searchPeople}
-					/>
+					<SearchForm value={peopleStore.search} onSubmit={peopleStore.searchPeople} />
 				</Col>
 
 				<Col span={24}>

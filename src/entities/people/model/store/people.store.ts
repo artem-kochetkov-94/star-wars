@@ -17,7 +17,7 @@ class PeopleStore implements IPeopleStore {
 	async getPeople(page?: number, search?: string): Promise<void> {
 		try {
 			this.isFetching = true;
-			const data = await this.peopleService.getPeople(page ?? 1, search ?? '');
+			const data = await this.peopleService.getPeople(page ?? 1, (search || this.search) ?? '');
 			this.data = data;
 		} catch (e) {
 		} finally {
@@ -56,12 +56,9 @@ class PeopleStore implements IPeopleStore {
 		this.getPeople(Number(page));
 	}
 
-	public searchPeople(): void {
-		this.getPeople(1, this.search);
-	}
-
-	public handleSearchChange(e: React.ChangeEvent<HTMLInputElement>): void {
-		this.search = e.target.value;
+	public searchPeople(search: string): void {
+		this.search = search;
+		this.getPeople(1, search);
 	}
 }
 

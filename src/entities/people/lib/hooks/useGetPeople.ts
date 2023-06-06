@@ -3,6 +3,6 @@ import { peopleStore } from '../../model/store/people.store';
 
 export const useGetPeople = () => {
 	useEffect(() => {
-		peopleStore.searchPeople();
+		peopleStore.getPeople(1, peopleStore.search);
 	}, []);
 };
