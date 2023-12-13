@@ -1,16 +1,16 @@
-import { personStore } from 'src/entities/people';
-import { PersonEditFormProps } from './personEditForm.props';
-import { observer } from 'mobx-react';
+import { Button, Col, Row, Spin } from 'antd';
 import { Form, Formik } from 'formik';
+import { observer } from 'mobx-react';
+import { personStore } from 'src/entities/people';
+import { useGetPerson } from 'src/entities/people/lib/hooks/useGetPerson';
+import { useGoBack } from 'src/shared/hooks/useGoBack';
+import { getFormikError } from 'src/shared/lib/getFormikError';
+import { FormItem } from 'src/shared/ui';
+import { Input } from 'src/shared/ui/input';
 import { schema } from '../model/schema';
 import { FormFieldNames } from '../types/formFieldNames';
-import { Button, Col, Row, Spin } from 'antd';
-import { FormItem } from 'src/shared/ui';
-import { getFormikError } from 'src/shared/lib/getFormikError';
+import { PersonEditFormProps } from './personEditForm.props';
 import { Styled } from './styles';
-import { Input } from 'src/shared/ui/input';
-import { useGoBack } from 'src/shared/hooks/useGoBack';
-import { useGetPerson } from 'src/entities/people/lib/hooks/useGetPerson';
 
 export const PersonEditForm: React.FC<PersonEditFormProps> = observer(({ id }) => {
 	useGetPerson(id);

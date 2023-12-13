@@ -1,22 +1,23 @@
 import { makeAutoObservable } from 'mobx';
+import { PeopleService } from '../api/people.service';
+import { IPeopleService } from '../api/people.service.interface';
 import { PeopleResponseDTO } from '../dto';
 import { IPeopleStore } from './people.store.interface';
-import { IPeopleService } from '../api/people.service.interface';
-import { PeopleService } from '../api/people.service';
 
 class PeopleStore implements IPeopleStore {
 	data: PeopleResponseDTO | null = null;
 	peopleService: IPeopleService = new PeopleService();
 	isFetching: boolean;
+	search = '';
 
 	constructor() {
 		makeAutoObservable(this, {}, { autoBind: true });
 	}
 
-	async getPeople(page?: string): Promise<void> {
+	async getPeople(page?: number): Promise<void> {
 		try {
 			this.isFetching = true;
-			const data = await this.peopleService.getPeople(page);
+			const data = await this.peopleService.getPeople(page ?? 1, this.search ?? '');
 			this.data = data;
 		} catch (e) {
 		} finally {
@@ -29,7 +30,7 @@ class PeopleStore implements IPeopleStore {
 		return searchParams.get('page');
 	}
 
-	async getPreviousPage(): Promise<void> {
+	public async getPreviousPage(): Promise<void> {
 		if (!this.data?.previous) {
 			return;
 		}
@@ -37,7 +38,7 @@ class PeopleStore implements IPeopleStore {
 		this.getPeopleByPage(this.data.previous);
 	}
 
-	async getNextPage(): Promise<void> {
+	public async getNextPage(): Promise<void> {
 		if (!this?.data?.next) {
 			return;
 		}
@@ -45,14 +46,19 @@ class PeopleStore implements IPeopleStore {
 		this.getPeopleByPage(this.data.next);
 	}
 
-	async getPeopleByPage(url: string): Promise<void> {
+	private async getPeopleByPage(url: string): Promise<void> {
 		const page = this.getPageFromUrl(url);
 
 		if (!page) {
 			return;
 		}
 
-		this.getPeople(page);
+		this.getPeople(Number(page));
+	}
+
+	public searchPeople(search: string): void {
+		this.search = search;
+		this.getPeople(1);
 	}
 }
 

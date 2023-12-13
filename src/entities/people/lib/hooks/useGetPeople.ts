@@ -3,6 +3,6 @@ import { peopleStore } from '../../model/store/people.store';
 
 export const useGetPeople = () => {
 	useEffect(() => {
-		peopleStore.getPeople();
+		peopleStore.getPeople(1);
 	}, []);
 };

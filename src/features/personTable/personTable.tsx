@@ -1,6 +1,6 @@
 import { Table } from 'antd';
-import { PersonListProps } from './personTable.props';
 import { columns } from './columns';
+import { PersonListProps } from './personTable.props';
 
 export const PersonTable: React.FC<PersonListProps> = ({ data, isFetching }) => {
 	return (
